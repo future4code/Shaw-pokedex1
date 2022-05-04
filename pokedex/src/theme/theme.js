@@ -121,15 +121,15 @@ const theme = extendTheme({
             variants: {
                 normal: {
                    
-                        bg: '#9099a0',
-                        borderRadius:'10px',
-                         padding:'0px 10px'
+                    bg: '#9099a0',
+                    borderRadius:'10px',
+                    padding:'0px 10px'
                 },
                 bug: {
                    
-                        bg: '#8FC12C',
-                        borderRadius:'10px',
-                         padding:'0px 10px'
+                    bg: '#8FC12C',
+                    borderRadius:'10px',
+                    padding:'0px 10px'
                 },
                 electric: {
                   
@@ -139,9 +139,9 @@ const theme = extendTheme({
                 },
                 fighting: {
                    
-                        bg: '#CD4069',
-                        borderRadius:'10px',
-                         padding:'0px 10px'
+                    bg: '#CD4069',
+                    borderRadius:'10px',
+                    padding:'0px 10px'
                 },
                 ghost: {
                    

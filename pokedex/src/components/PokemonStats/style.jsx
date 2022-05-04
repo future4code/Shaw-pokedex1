@@ -2,7 +2,7 @@ import styled from 'styled-components'
 
 export const StatsContainer = styled.div`
     color:#423D3D;
-    width: 50%;
+    width: 30%;
 
 `
 export const StatName = styled.span`
@@ -14,6 +14,9 @@ export const FieldsetForm = styled.fieldset`
     font-size: 1.1rem;
     padding: 5%;
     border-radius: 10px;
+    display:flex;
+    flex-direction: column;
+    gap:20px;
     legend{
         
         font-size: 1.5rem;

@@ -1,18 +1,16 @@
-
 import {FieldsetForm, StatsContainer} from './style'
 import { Badge } from '@chakra-ui/react'
-
-
+import {typesPt} from '../../theme/pokemonTypeColors'
 
 const PokemonTypeWeak = (props) => {
 
-    const types = props.types.map((type)=>{
-        return<Badge variant={type.type.name}>{type.type.name}</Badge>
+    const types = props.types.map((type,index)=>{
+        return<Badge key={index} variant={type.type.name}>{typesPt[type.type.name]}</Badge>
     })
     return (
         <StatsContainer>
             <FieldsetForm>
-                <legend>Type</legend>
+                <legend>Tipos</legend>
                 {types}
             </FieldsetForm>
         </StatsContainer>
