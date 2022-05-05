@@ -20,8 +20,7 @@ export const FieldsetForm = styled.fieldset`
     height: 100%;
     legend{
         font-size: 1.5rem;
-        padding: 5px;
-        
+        padding:5px ;
     }
     div{
         p{

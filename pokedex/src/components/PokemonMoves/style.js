@@ -14,7 +14,7 @@ export const StatName = styled.span`
 export const FieldsetForm = styled.fieldset`
     border: 2px solid #423D3D;
     font-size: 1.1rem;
-    padding-right: 8px;
+    padding:0px 5px 0px 5%;
     border-radius: 10px;
     display:flex;
     flex-direction: column;
