@@ -6,6 +6,7 @@ import { base_url } from '../../constants/constants'
 import { useEffect } from "react"
 import { Bloco } from './style'
 import Card from '../../components/Card/Card'
+import Header from '../../components/Header/Header'
 
 const HomePage = () => {
 
@@ -38,8 +39,12 @@ const HomePage = () => {
 
     return (
         <div>
+             <Header page={"home"}/>
             {getPokemonList}
         </div>
+
+       
+      
     )
 }
 
