@@ -10,7 +10,7 @@ const PokemonTypeWeak = (props) => {
     return (
         <StatsContainer>
             <FieldsetForm>
-                <legend>Tipos</legend>
+                <legend>Tipo</legend>
                 {types}
             </FieldsetForm>
         </StatsContainer>
