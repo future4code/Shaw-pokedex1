@@ -128,7 +128,7 @@ const theme = extendTheme({
                     display:'flex',
                     alignItems:'center',
                     justifyContent:'center',
-                    minWidth: '90px',
+                    minWidth: '95px',
                     maxHeight: '20px'
                 },
                 normal: {

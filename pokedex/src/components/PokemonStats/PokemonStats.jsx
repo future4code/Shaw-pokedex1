@@ -10,7 +10,7 @@ const PokemonStats = (props) => {
         return (
             <div key={index}>
                 <p><StatName>{statsPt[index]}: </StatName>{stat.base_stat} </p>
-                <Progress variant={props.type} size='sm' value={stat.base_stat} max='180' />
+                <Progress variant={props.type} size='sm' value={stat.base_stat} max='260' />
 
             </div>
         )
