@@ -1,3 +1,24 @@
+import bug from '../assets/Images/types/bug.png'
+import dark from '../assets/Images/types/dark.png'
+import dragon from '../assets/Images/types/dragon.png'
+import electric from '../assets/Images/types/electric.png'
+import fairy from '../assets/Images/types/fairy.png'
+import fighting from '../assets/Images/types/fighting.png'
+import flying from '../assets/Images/types/flying.png'
+import fire from '../assets/Images/types/fire.png'
+import ghost from '../assets/Images/types/ghost.png'
+import grass from '../assets/Images/types/grass.png'
+import ground from '../assets/Images/types/ground.png'
+import ice from '../assets/Images/types/ice.png'
+import normal from '../assets/Images/types/normal.png'
+import poison from '../assets/Images/types/poison.png'
+import psychic from '../assets/Images/types/psychic.png'
+import rock from '../assets/Images/types/rock.png'
+import steel from '../assets/Images/types/steel.png'
+import water from '../assets/Images/types/water.png'
+
+
+
 
 export const colors = {
     normal: '#9099a0',
@@ -38,4 +59,25 @@ export const typesPt = {
     rock: 'pedra',
     grass: 'planta',
     fairy: 'fada',
+}
+
+export const typesIcons = {
+    normal: normal,
+    bug: bug,
+    electric:electric,
+    fighting: fighting,
+    ghost: ghost,
+    psychic: psychic,
+    flying: flying,
+    steel: steel,
+    ice: ice,
+    poison: poison,
+    fire: fire,
+    dragon: dragon,
+    ground: ground,
+    water: water,
+    dark: dark,
+    rock: rock,
+    grass: grass,
+    fairy: fairy
 }
