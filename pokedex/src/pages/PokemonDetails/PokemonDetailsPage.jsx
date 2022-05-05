@@ -27,7 +27,7 @@ const PokemonDetailsPage = () => {
 
     return (
         <PageContainer>
-            {pokemonData.types && <Box bg={colors[pokemonData.types[0].type.name]} style={{ display: 'flex', flexDirection: 'column', justifyContent: 'space-between', alignItems: 'center', height: '35vh', borderRadius: '10px' }}>
+            {pokemonData.types && <Box bg={colors[pokemonData.types[0].type.name]} style={{ display: 'flex', flexDirection: 'column', justifyContent: 'space-between', alignItems: 'center', height: '35vh', borderRadius: '10px', paddingBottom:'10px' }}>
                 <ButtonContainer>
                     <button onClick={onClickPrevious}><IoIosArrowDropleftCircle /></button>
                     <p>#{('00'+pokemonData.id).slice(-3)} <span>{pokemonData.name}</span></p>
