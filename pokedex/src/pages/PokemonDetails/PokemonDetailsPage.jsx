@@ -1,57 +1,66 @@
-import axios from 'axios'
-import { useState } from 'react'
-import PokemonTypeWeak from '../../components/PokemonMoves/PokemonTypeWeak'
+import PokemonType from '../../components/PokemonTypes/PokemonType'
 import PokemonStats from '../../components/PokemonStats/PokemonStats'
 import useRequestData from '../../hook/useRequestData'
-import {InfoContainer, PageContainer, Img} from './style'
+import { InfoContainer, PageContainer, Img, InfoCenterDiv, ButtonContainer } from './style'
 import { Box } from "@chakra-ui/react"
 import { colors } from '../../theme/pokemonTypeColors'
+import PokeWeakness from '../../components/PokeWeakness/PokeWeakness'
+import PokemonMoves from '../../components/PokemonMoves/PokemonMoves'
+import PokemonSprites from '../../components/PokemonSprites/PokemonSprites'
+import { useNavigate, useParams } from 'react-router-dom'
+import { goToPokemonDetailsPage } from '../../routes/coordinator'
+import {IoIosArrowDropleftCircle, IoIosArrowDroprightCircle} from "react-icons/io"
 
 
-    const getRequest = (url, setData) => {
-
-        axios.get(url)
-        .then((res) =>{
-            console.log( res.data.damage_relations.double_damage_from)
-
-            setData(res.data.damage_relations.double_damage_from)
-        })
-
-    }
 const PokemonDetailsPage = () => {
-    const [data, setData] = useState([])
-    const pokemonData = useRequestData({},'https://pokeapi.co/api/v2/pokemon/500')
-    
-   
+    const navigate = useNavigate()
+    const params = useParams()
+    let pokemonData = useRequestData({}, `https://pokeapi.co/api/v2/pokemon/${params.id}`)
 
-    console.log(pokemonData)
-    // let pokemonWeakness = []
-    //  pokemonData.name && pokemonData.types.map((type)=>{
-    //     let data = getRequest(type.type.url,setData);
-    //     console.log(data)
-    //     pokemonWeakness =  [...pokemonWeakness,data] 
-    //  })
-    //  console.log(pokemonWeakness)
-    // console.log(pokemonData.sprites.other['official-artwork'].front_default) damage_relations.double_damage_from ->name
+    const onClickNext = () => {
+        params.id !== '898' && goToPokemonDetailsPage(navigate, Number(params.id) + 1)
+    }
+    const onClickPrevious = () => {
+        console.log()
+        params.id !== '1' && goToPokemonDetailsPage(navigate, Number(params.id) - 1)
+    }
 
     return (
         <PageContainer>
-       {pokemonData.types && <Box bg={colors[pokemonData.types[0].type.name]} style={{display:'flex',justifyContent:'center', alignItems:'end', height:'35vh', borderRadius:'10px'}}>
-             <Img src={pokemonData.sprites.other['official-artwork'].front_default} alt = {pokemonData.name}/>
-             {/* <Img src={pokemonData.sprites.versions['generation-v']['black-white'].animated.back_default} alt = {pokemonData.name}/> */}
+            {pokemonData.types && <Box bg={colors[pokemonData.types[0].type.name]} style={{ display: 'flex', flexDirection: 'column', justifyContent: 'space-between', alignItems: 'center', height: '35vh', borderRadius: '10px' }}>
+                <ButtonContainer>
+                    <button onClick={onClickPrevious}><IoIosArrowDropleftCircle /></button>
+                    <p>#{('00'+pokemonData.id).slice(-3)} <span>{pokemonData.name}</span></p>
+                    <button onClick={onClickNext}><IoIosArrowDroprightCircle /></button>
+                </ButtonContainer>
+                <Img src={pokemonData.sprites.other['official-artwork'].front_default} alt={pokemonData.name} />
 
-        </Box>}
+            </Box>}
 
             {
                 pokemonData.stats && <InfoContainer>
                     <PokemonStats
-                    stats={pokemonData.stats} type={pokemonData.types[0].type.name} />
-                     <PokemonTypeWeak types ={pokemonData.types}/>
-                </InfoContainer> 
-                
-            }
-           
+                        stats={pokemonData.stats}
+                        type={pokemonData.types[0].type.name}
+                    />
+                    <InfoCenterDiv>
+                        <PokemonType types={pokemonData.types}
+                        />
+                        <PokeWeakness
+                            types={pokemonData.types}
+                        />
+                        <PokemonSprites
+                            sprites={params.id <= 649 ? pokemonData.sprites.versions['generation-v']['black-white'].animated : pokemonData.sprites}
+                            name={pokemonData.name}
+                        />
+                    </InfoCenterDiv>
+                    <PokemonMoves
+                        moves={pokemonData.moves}
+                        type={pokemonData.types[0].type.name}
+                    />
 
+                </InfoContainer>
+            }
         </PageContainer>
     )
 }
