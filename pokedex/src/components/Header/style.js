@@ -38,6 +38,9 @@ export const DivDex = styled.div`
 
 export const Button = styled.button`
     height: 90%;
+    :hover{
+        opacity: 85%;
+    }
 `
 
 export const Img = styled.img`
