@@ -122,14 +122,13 @@ const theme = extendTheme({
                 moves: {
                     bg: '#DFDFDF',
                     borderRadius: '10px',
-                    padding: '0px 10px',
                     fontWeight:'500',
                     fontSize:'0.9rem',
                     textTransform: 'capitalize',
                     display:'flex',
                     alignItems:'center',
                     justifyContent:'center',
-                    minWidth: '100px',
+                    minWidth: '90px',
                     maxHeight: '20px'
                 },
                 normal: {

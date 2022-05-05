@@ -25,6 +25,6 @@ export const Fieldset = styled.fieldset`
 `
 
 export const Img = styled.img`
-    height: 110%;
+    height: 100%;
     padding-bottom: 5px;
 `
