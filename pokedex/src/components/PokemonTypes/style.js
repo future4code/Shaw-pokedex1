@@ -16,6 +16,6 @@ export const FieldsetForm = styled.fieldset`
     gap:10px;
     legend{
         font-size: 1.5rem;
-        padding: 5px;
+        padding: 5px ;
     }
 `

@@ -10,6 +10,7 @@ import PokemonSprites from '../../components/PokemonSprites/PokemonSprites'
 import { useNavigate, useParams } from 'react-router-dom'
 import { goToPokemonDetailsPage } from '../../routes/coordinator'
 import {IoIosArrowDropleftCircle, IoIosArrowDroprightCircle} from "react-icons/io"
+import Header from '../../components/Header/Header'
 
 
 const PokemonDetailsPage = () => {
@@ -26,6 +27,8 @@ const PokemonDetailsPage = () => {
     }
 
     return (
+        <>
+        <Header />
         <PageContainer>
             {pokemonData.types && <Box bg={colors[pokemonData.types[0].type.name]} style={{ display: 'flex', flexDirection: 'column', justifyContent: 'space-between', alignItems: 'center', height: '35vh', borderRadius: '10px', paddingBottom:'10px' }}>
                 <ButtonContainer>
@@ -62,6 +65,7 @@ const PokemonDetailsPage = () => {
                 </InfoContainer>
             }
         </PageContainer>
+        </>
     )
 }
 
