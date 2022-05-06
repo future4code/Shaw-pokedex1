@@ -4,7 +4,6 @@ import { colors } from '../../theme/pokemonTypeColors'
 export const IconeImg = styled.img`
     width: 30px;
     height: 30px;
-    box-shadow: 0px 0px 10px #3B3D42;
     border-radius: 50%;
 `
 
@@ -14,12 +13,13 @@ export const CardContainer = styled.div`
     justify-content: center;
     align-items: center;
     border-radius: 10px;
-    background-color: ${props => colors[props.type]};
+    background: linear-gradient(53deg, rgba(248,246,244,1) 5%, ${props => colors[props.type]} 86%);
     height: 55vh;
     font-size: 1.2rem;
     text-transform: capitalize;
     min-width: 100%;
-    gap: 1.5%;
+    gap: 2.5%;
+    box-shadow: 0px 0px 6px;
     span{
         width: 100%;
         padding-left: 7%;
@@ -32,8 +32,8 @@ export const CardContainer = styled.div`
 `
 
 export const PokeImg = styled.img`
-    width: 65%;
-    cursor: pointer;
+         width: 65%;
+        cursor: pointer;
 `
 
 export const PokeBallContainer = styled.span`
