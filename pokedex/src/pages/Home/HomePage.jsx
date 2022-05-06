@@ -7,6 +7,7 @@ import { useEffect } from "react"
 import { PokeCards, HomeContainer } from './style'
 import Card from '../../components/Card/Card'
 import Header from '../../components/Header/Header'
+import Footer from "../../components/Footer/Footer"
 
 const HomePage = () => {
 
@@ -41,10 +42,10 @@ const HomePage = () => {
                     {getPokemonList}
                 </PokeCards>
             </HomeContainer>
+            <Footer />
         </div>
 
-
-
+          
     )
 }
 

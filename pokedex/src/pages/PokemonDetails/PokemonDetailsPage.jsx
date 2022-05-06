@@ -11,6 +11,7 @@ import { useNavigate, useParams } from 'react-router-dom'
 import { goToPokemonDetailsPage } from '../../routes/coordinator'
 import {IoIosArrowDropleftCircle, IoIosArrowDroprightCircle} from "react-icons/io"
 import Header from '../../components/Header/Header'
+import Footer from '../../components/Footer/Footer'
 
 
 const PokemonDetailsPage = () => {
@@ -28,43 +29,44 @@ const PokemonDetailsPage = () => {
 
     return (
         <>
-        <Header />
-        <PageContainer>
-            {pokemonData.types && <Box bg={colors[pokemonData.types[0].type.name]} style={{ display: 'flex', flexDirection: 'column', justifyContent: 'space-between', alignItems: 'center', height: '35vh', borderRadius: '10px', paddingBottom:'10px' }}>
-                <ButtonContainer>
-                    <button onClick={onClickPrevious}><IoIosArrowDropleftCircle /></button>
-                    <p>#{('00'+pokemonData.id).slice(-3)} <span>{pokemonData.name}</span></p>
-                    <button onClick={onClickNext}><IoIosArrowDroprightCircle /></button>
-                </ButtonContainer>
-                <Img src={pokemonData.sprites.other['official-artwork'].front_default} alt={pokemonData.name} />
+            <Header />
+            <PageContainer>
+                {pokemonData.types && <Box bg={colors[pokemonData.types[0].type.name]} style={{ display: 'flex', flexDirection: 'column', justifyContent: 'space-between', alignItems: 'center', height: '35vh', borderRadius: '10px', paddingBottom:'10px' }}>
+                    <ButtonContainer>
+                        <button onClick={onClickPrevious}><IoIosArrowDropleftCircle /></button>
+                        <p>#{('00'+pokemonData.id).slice(-3)} <span>{pokemonData.name}</span></p>
+                        <button onClick={onClickNext}><IoIosArrowDroprightCircle /></button>
+                    </ButtonContainer>
+                    <Img src={pokemonData.sprites.other['official-artwork'].front_default} alt={pokemonData.name} />
 
-            </Box>}
+                </Box>}
 
-            {
-                pokemonData.stats && <InfoContainer>
-                    <PokemonStats
-                        stats={pokemonData.stats}
-                        type={pokemonData.types[0].type.name}
-                    />
-                    <InfoCenterDiv>
-                        <PokemonType types={pokemonData.types}
+                {
+                    pokemonData.stats && <InfoContainer>
+                        <PokemonStats
+                            stats={pokemonData.stats}
+                            type={pokemonData.types[0].type.name}
                         />
-                        <PokeWeakness
-                            types={pokemonData.types}
+                        <InfoCenterDiv>
+                            <PokemonType types={pokemonData.types}
+                            />
+                            <PokeWeakness
+                                types={pokemonData.types}
+                            />
+                            <PokemonSprites
+                                sprites={params.id <= 649 ? pokemonData.sprites.versions['generation-v']['black-white'].animated : pokemonData.sprites}
+                                name={pokemonData.name}
+                            />
+                        </InfoCenterDiv>
+                        <PokemonMoves
+                            moves={pokemonData.moves}
+                            type={pokemonData.types[0].type.name}
                         />
-                        <PokemonSprites
-                            sprites={params.id <= 649 ? pokemonData.sprites.versions['generation-v']['black-white'].animated : pokemonData.sprites}
-                            name={pokemonData.name}
-                        />
-                    </InfoCenterDiv>
-                    <PokemonMoves
-                        moves={pokemonData.moves}
-                        type={pokemonData.types[0].type.name}
-                    />
 
-                </InfoContainer>
-            }
-        </PageContainer>
+                    </InfoContainer>
+                }
+            </PageContainer>
+            <Footer />
         </>
     )
 }

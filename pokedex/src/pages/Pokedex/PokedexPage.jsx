@@ -1,15 +1,13 @@
-import React, { useContext } from 'react'
-import { GlobalContext } from '../../global/GlobalContext'
-
-
+import Footer from "../../components/Footer/Footer"
+import Header from "../../components/Header/Header"
 
 const PokedexPage = () => {
-
-    
-    return (
-        <>
-    Eu sou a Pokedex!
-        </>
+    return(
+        <div>
+            <Header />
+            Eu sou PokedexPage!
+            <Footer />
+        </div>
     )
 }
 
