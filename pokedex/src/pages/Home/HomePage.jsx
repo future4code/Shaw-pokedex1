@@ -4,7 +4,7 @@ import axios from 'axios'
 import GlobalState from "../../global/GlobalState"
 import { base_url } from '../../constants/constants'
 import { useEffect } from "react"
-import { Bloco } from './style'
+import { PokeCards, HomeContainer } from './style'
 import Card from '../../components/Card/Card'
 import Header from '../../components/Header/Header'
 import Footer from "../../components/Footer/Footer"
@@ -29,21 +29,23 @@ const HomePage = () => {
         getAllPokemon()
     }, [])
 
-    const getPokemonList = pokemonList?.map((poke) => {
-        return (
-            <div>
-                <Card pokeName = {poke.name}/>
-            </div>
-        )
 
+    const getPokemonList = pokemonList?.map((poke) => {
+        return <Card pokeName={poke.name} />
     })
 
     return (
         <div>
-            <Header page={"home"}/>
-            {getPokemonList}
+            <Header page={"home"} />
+            <HomeContainer>
+                <PokeCards>
+                    {getPokemonList}
+                </PokeCards>
+            </HomeContainer>
             <Footer />
         </div>
+
+          
     )
 }
 

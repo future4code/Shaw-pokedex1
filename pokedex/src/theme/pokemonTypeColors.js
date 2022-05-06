@@ -23,7 +23,7 @@ import water from '../assets/Images/types/water.png'
 export const colors = {
     normal: '#9099a0',
     bug: '#8FC12C',
-    electric:'#F3D13B',
+    electric: '#F3D13B',
     fighting: '#CD4069',
     ghost: '#5268AB',
     psychic: '#F87176',
@@ -43,7 +43,7 @@ export const colors = {
 export const typesPt = {
     normal: 'normal',
     bug: 'inseto',
-    electric:'elétrico',
+    electric: 'elétrico',
     fighting: 'lutador',
     ghost: 'fantasma',
     psychic: 'psíquico',
@@ -64,7 +64,7 @@ export const typesPt = {
 export const typesIcons = {
     normal: normal,
     bug: bug,
-    electric:electric,
+    electric: electric,
     fighting: fighting,
     ghost: ghost,
     psychic: psychic,
@@ -80,4 +80,25 @@ export const typesIcons = {
     rock: rock,
     grass: grass,
     fairy: fairy
+}
+
+export const colorsShadow = {
+    normal: '#747B80',
+    bug: '#8FC12C',
+    electric: '#F3D13B',
+    fighting: '#CD4069',
+    ghost: '#5268AB',
+    psychic: '#F87176',
+    flying: 'red',
+    steel: '#5A8EA1',
+    ice: '#74CEBF',
+    poison: '#AB6AC8',
+    fire: '#FE9C54',
+    dragon: '#0A6CC4',
+    ground: '#D97745',
+    water: '#4C8FD5',
+    dark: '#5A5266',
+    rock: '#C6B78A',
+    grass: '#63BB5A',
+    fairy: '#EB8EE5',
 }
