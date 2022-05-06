@@ -36,16 +36,16 @@ const Footer = () => {
             <hr />
 
             <nav>
-                <a href="https://www.facebook.com/" target="_blank" rel="external">
+                <a href="https://www.facebook.com/Pokemon/" target="_blank" rel="external">
                     <RiFacebookBoxFill alt="Ícone do FaceBook" />
                 </a>
-                <a href="https://twitter.com/" target="_blank" rel="external">
+                <a href="https://twitter.com/pokemon" target="_blank" rel="external">
                     <RiTwitterFill alt="Ícone do Twitter" />
                 </a>
-                <a href="https://youtube.com/" target="_blank" rel="external">
+                <a href="https://www.youtube.com/user/PokemonOficialPT" target="_blank" rel="external">
                     <RiYoutubeFill alt="Ícone do Youtube" />
                 </a>
-                <a href="https://www.instagram.com/" target="_blank" rel="external">
+                <a href="https://www.instagram.com/pokemon/" target="_blank" rel="external">
                     <RiInstagramFill alt="Ícone do Instagram" />
                 </a>
             </nav>
