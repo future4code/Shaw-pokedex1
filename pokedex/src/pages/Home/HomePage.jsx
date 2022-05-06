@@ -159,7 +159,7 @@ const HomePage = () => {
                         </PaginationContainer>
                     </Pagination>
                     <Grid
-                        gap={3}
+                        gap={10}
                         mt={20}
                         px={20}
                         templateColumns="repeat(3, 18rem)"

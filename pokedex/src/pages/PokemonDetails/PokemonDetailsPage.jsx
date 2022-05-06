@@ -1,7 +1,7 @@
 import PokemonType from '../../components/PokemonTypes/PokemonType'
 import PokemonStats from '../../components/PokemonStats/PokemonStats'
 import useRequestData from '../../hook/useRequestData'
-import { InfoContainer, PageContainer, Img, InfoCenterDiv, ButtonContainer } from './style'
+import { InfoContainer, PageContainer, Img, InfoCenterDiv, ButtonContainer, TesteBox } from './style'
 import { Box } from "@chakra-ui/react"
 import { colors } from '../../theme/pokemonTypeColors'
 import PokeWeakness from '../../components/PokeWeakness/PokeWeakness'
@@ -31,7 +31,8 @@ const PokemonDetailsPage = () => {
         <>
             <Header />
             <PageContainer>
-                {pokemonData.types && <Box bg={colors[pokemonData.types[0].type.name]} style={{ display: 'flex', flexDirection: 'column', justifyContent: 'space-between', alignItems: 'center', height: '35vh', borderRadius: '10px', paddingBottom:'10px' }}>
+                {pokemonData.types && <Box bgGradient ={`linear(to top, #f8f6f45a 0.05%, ${colors[pokemonData.types[0].type.name]} 80%, ${colors[pokemonData.types[0].type.name]} 50%)`} 
+                boxShadow='md' style={{ display: 'flex', flexDirection: 'column', justifyContent: 'space-between', alignItems: 'center', height: '35vh', borderRadius: '10px', paddingBottom:'10px' }}>
                     <ButtonContainer>
                         <button onClick={onClickPrevious}><IoIosArrowDropleftCircle /></button>
                         <p>#{('00'+pokemonData.id).slice(-3)} <span>{pokemonData.name}</span></p>
