@@ -7,7 +7,8 @@ flex-direction: column;
 justify-content: center;
 align-items: center;
 border-radius: 10px;
-background-color: ${props => colors[props.type]};
+/* background-color: ${props => colors[props.type]}; */
+background: linear-gradient(53deg, rgba(248,246,244,1) 5%, ${props => colors[props.type]} 86%);
 height: 55vh;
 font-size: 1.2rem;
 text-transform:capitalize;
@@ -33,7 +34,7 @@ export const PokeImg = styled.img`
 export const IconeImg = styled.img`
     width: 30px;
     height: 30px;
-    box-shadow: 0px 0px 10px #3B3D42;
+    /* box-shadow: 0px 0px 10px #3B3D42; */
     border-radius: 50%;
 `
 

@@ -1,7 +1,7 @@
 import React, {useEffect, useState } from 'react'
 import axios from 'axios'
 import { base_url } from '../../constants/constants'
-import { HomeContainer } from './style'
+import { HomeContainer, HomeMain } from './style'
 import Card from '../../components/Card/Card'
 import Header from '../../components/Header/Header'
 import Footer from "../../components/Footer/Footer"
@@ -21,11 +21,11 @@ import { MdOutlineArrowForwardIos, MdOutlineArrowBackIosNew } from 'react-icons/
 const HomePage = () => {
 
     const [pokemonList, setPokemonList] = useState([])
-    const [pokemonsTotal, setPokemonsTotal] = useState(undefined);
 
     // constants
     const outerLimit = 2;
     const innerLimit = 2;
+    const pokemonsTotal = 898;
 
     // pagination hook
     const {
@@ -53,13 +53,16 @@ const HomePage = () => {
         axios.get(url)
             .then((res) => {
                 setPokemonList(res.data.results)
-                setPokemonsTotal(res.data.count);
             })
             .catch((error) => console.error("App =>", error));
     }
 
     useEffect(() => {
-        getAllPokemon(21, offset)
+        if(currentPage===43){
+            getAllPokemon(16, offset)
+        }else{
+            getAllPokemon(21, offset)
+        }
     }, [currentPage, offset]);
 
     // handlers
@@ -69,10 +72,14 @@ const HomePage = () => {
     };
 
     return (
-        <div>
+        <HomeContainer>
             <Header page={"home"} />
-            <HomeContainer>
-                <Stack>
+            <HomeMain>
+                <Stack 
+                display={'flex'}
+                flexDirection={'column'}
+                gap={'20px'}
+                >
                     <Pagination
                         pagesCount={pagesCount}
                         currentPage={currentPage}
@@ -163,9 +170,9 @@ const HomePage = () => {
                         })}
                     </Grid>
                 </Stack>
-             </HomeContainer>
+             </HomeMain>
              <Footer />
-        </div>
+        </HomeContainer>
     )
 }
 
