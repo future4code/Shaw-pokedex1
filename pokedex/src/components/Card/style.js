@@ -26,7 +26,8 @@ span {
 }
 `
 export const PokeImg = styled.img`
-    width: 90%;
+    width: 80%;
+    cursor: pointer;
 `
 
 export const IconeImg = styled.img`
@@ -34,4 +35,15 @@ export const IconeImg = styled.img`
     height: 30px;
     box-shadow: 0px 0px 10px #3B3D42;
     border-radius: 50%;
+`
+
+export const PokeBallContainer = styled.span`
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+    padding-right: 20px;
+    img{
+    width: 12%;
+    cursor: pointer;
+    }
 `

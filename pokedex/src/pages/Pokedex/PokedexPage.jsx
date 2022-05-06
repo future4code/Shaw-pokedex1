@@ -1,9 +1,14 @@
+import React, { useContext } from 'react'
+import { GlobalContext } from '../../global/GlobalContext'
+
 
 
 const PokedexPage = () => {
-    return(
+
+    
+    return (
         <>
-            Eu sou PokedexPage!
+    Eu sou a Pokedex!
         </>
     )
 }

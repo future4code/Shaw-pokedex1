@@ -1,13 +1,24 @@
-import React, { useState } from 'react'
+import React, { useState, useContext } from 'react'
 import axios from 'axios'
 import { base_url } from '../../constants/constants'
 import { useEffect } from 'react'
-import { CardContainer, PokeImg, IconeImg } from './style'
+import { GlobalContext } from '../../global/GlobalContext'
+import { CardContainer, PokeImg, IconeImg, PokeBallContainer } from './style'
 import { typesIcons, colorsShadow } from '../../theme/pokemonTypeColors'
+import PokeBall from '../../assets/Images/pokeClose.png'
+import { goToPokemonDetailsPage } from '../../routes/coordinator'
+import { useNavigate } from 'react-router'
 
 
 function Card(props) {
     const [pokemon, setPokemon] = useState({})
+    const navigate = useNavigate()
+
+    const { states, setters } = useContext(GlobalContext)
+
+    const pokedex = states.pokedex
+    const setPokedex = setters.pokedex
+    
 
 
     const getPokemon = (pokeName) => {
@@ -22,32 +33,38 @@ function Card(props) {
             })
     }
 
-    useEffect(() => {
-        getPokemon(props.pokeName)
-    }, [props.pokeName])
+        useEffect(() => {
+            getPokemon(props.pokeName)
+        }, [props.pokeName])
 
-    const types = pokemon.types?.map((type, index) => {
+
+
+        const types = pokemon.types?.map((type, index) => {
+            return (
+                <IconeImg key={index} src={typesIcons[type.type.name]} />
+            )
+        })
+
         return (
-            <IconeImg key={index} src={typesIcons[type.type.name]}  />
+            <div>
+                {pokemon.name ?
+                    <CardContainer type={pokemon.types[0].type.name}>
+                        <span> #{('00' + pokemon.id).slice(-3)}</span>
+                        <PokeImg onClick={() => goToPokemonDetailsPage(navigate, pokemon.id)} src={pokemon.sprites.other['official-artwork'].front_default} alt={pokemon.name} />
+                        <p> {pokemon.name} </p>
+                        <div>{types}</div>
+                        <PokeBallContainer>
+                            <img src={PokeBall} />
+                        </PokeBallContainer>
+                    </CardContainer>
+                    :
+                    <div>
+                        Carregando...
+                    </div>
+                }
+            </div>
         )
-    })
+    }
 
-    return (
-        <div>
-            {pokemon.name ?
-                <CardContainer type={pokemon.types[0].type.name}>
-                    <span> #{('00' + pokemon.id).slice(-3)}</span>
-                    <PokeImg src={pokemon.sprites.other['official-artwork'].front_default} alt={pokemon.name} />
-                    <p> {pokemon.name} </p>
-                    <div>{types}</div>
-                </CardContainer>
-                :
-                <div>
-                    Carregando...
-                </div>
-            }
-        </div>
-    )
-}
 
-export default Card;
+    export default Card;

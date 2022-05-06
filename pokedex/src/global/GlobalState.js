@@ -1,12 +1,14 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { GlobalContext } from './GlobalContext'
-import {base_url} from '../constants/constants'
+import { base_url } from '../constants/constants'
 import axios from 'axios'
 
 export default function GlobalState(props) {
 
+    const [pokedex, setPokedex] = useState([])
+
     const getRequest = (url, setData) => {
-        axios.get(base_url + url )
+        axios.get(base_url + url)
             .then((res) => {
                 setData(res.data)
             })
@@ -15,8 +17,12 @@ export default function GlobalState(props) {
             })
     }
 
+    const states = { pokedex }
+    const setters = { setPokedex }
+
+
     return (
-        <GlobalContext.Provider value={getRequest}>
+        <GlobalContext.Provider value={{ states, setters }}>
             {props.children}
         </GlobalContext.Provider>
     )

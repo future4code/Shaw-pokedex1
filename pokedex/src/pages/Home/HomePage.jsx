@@ -28,8 +28,9 @@ const HomePage = () => {
         getAllPokemon()
     }, [])
 
+
     const getPokemonList = pokemonList?.map((poke) => {
-        return  <Card pokeName={poke.name} />
+        return <Card pokeName={poke.name} />
     })
 
     return (
