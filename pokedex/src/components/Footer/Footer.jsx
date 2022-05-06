@@ -1,50 +1,52 @@
 import { FooterDiv, LinksDiv } from "./style"
-import { RiArrowDropRightLine } from "react-icons/ri"
+import { 
+    RiArrowDropRightFill, 
+    RiFacebookBoxFill, 
+    RiTwitterFill, 
+    RiYoutubeFill, 
+    RiInstagramFill 
+} from "react-icons/ri"
 
 const Footer = () => {
 
     return(
         <FooterDiv> 
             <LinksDiv>
-                <p> Links Interessantes </p>
+                <h2> Links Interessantes </h2>
                 <a href="https://www.pokemon.com/br/noticias-pokemon/" target="_blank" rel="external">
-                    {/* <RiArrowDropRightLine />  */}
-                    - Notícias de Pokémon 
+                    <span><RiArrowDropRightFill /></span> Notícias de Pokémon 
                 </a>
                 <a href="https://watch.pokemon.com/pt-br/#/" target="_blank" rel="external">
-                    {/* <RiArrowDropRightLine />  */}
-                    - Episódios de Pokémon 
+                    <span><RiArrowDropRightFill /></span> Episódios de Pokémon 
                 </a>
                 <a href="https://legends.pokemon.com/en-us/" target="_blank" rel="external">
-                    {/* <RiArrowDropRightLine />  */}
-                    - Pókemon Arceus
+                    <span><RiArrowDropRightFill /></span> Pókemon Arceus
                 </a>
                 <a href="https://play.pokemonshowdown.com/" target="_blank" rel="external">
-                    {/* <RiArrowDropRightLine />  */}
-                    - Pókemon Showdown
+                    <span><RiArrowDropRightFill /></span> Pókemon Showdown
                 </a>
             </LinksDiv>
 
             <hr />
             
             <h3>
-                ©2022 Pokémon. ©1995 - 2022 Nintendo/Creatures Inc./GAME FREAK inc. TM, ®Nintendo.
+                ©2022 Pokémon. ©1995 - 2022 Nintendo/Creatures <br/> Inc./GAME FREAK inc. TM, ®Nintendo.
             </h3>
 
-            <hr width="20" size="10" />
+            <hr />
 
             <nav>
                 <a href="https://www.facebook.com/" target="_blank" rel="external">
-                    <img src="" alt="Ícone do FaceBook" />
-                </a>
-                <a href="https://www.instagram.com/" target="_blank" rel="external">
-                    <img src="" alt="Ícone do Instagram" />
-                </a>
-                <a href="https://youtube.com/" target="_blank" rel="external">
-                    <img src="" alt="Ícone do Youtube" />
+                    <RiFacebookBoxFill alt="Ícone do FaceBook" />
                 </a>
                 <a href="https://twitter.com/" target="_blank" rel="external">
-                    <img src="" alt="Ícone do Twitter" />
+                    <RiTwitterFill alt="Ícone do Twitter" />
+                </a>
+                <a href="https://youtube.com/" target="_blank" rel="external">
+                    <RiYoutubeFill alt="Ícone do Youtube" />
+                </a>
+                <a href="https://www.instagram.com/" target="_blank" rel="external">
+                    <RiInstagramFill alt="Ícone do Instagram" />
                 </a>
             </nav>
         </FooterDiv>

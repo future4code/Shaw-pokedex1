@@ -7,6 +7,7 @@ import { useEffect } from "react"
 import { Bloco } from './style'
 import Card from '../../components/Card/Card'
 import Header from '../../components/Header/Header'
+import Footer from "../../components/Footer/Footer"
 
 const HomePage = () => {
 
@@ -39,12 +40,10 @@ const HomePage = () => {
 
     return (
         <div>
-             <Header page={"home"}/>
+            <Header page={"home"}/>
             {getPokemonList}
+            <Footer />
         </div>
-
-       
-      
     )
 }
 
