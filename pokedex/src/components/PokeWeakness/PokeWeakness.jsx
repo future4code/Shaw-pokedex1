@@ -1,9 +1,7 @@
 import useRequestData from '../../hook/useRequestData'
 import { Badge } from '@chakra-ui/react'
-import {typesPt} from '../../theme/pokemonTypeColors'
-import {WeaknessCointer} from './style'
-
-
+import { typesPt } from '../../theme/pokemonTypeColors'
+import { WeaknessCointer } from './style'
 
 const PokeWeakness = (props) => {
     
@@ -12,7 +10,7 @@ const PokeWeakness = (props) => {
     const datas1 =  useRequestData({}, url1)
     const datas2 = useRequestData({}, url2)
   
-    let renderWeakness
+    let renderWeakness;
 
     if(datas1.damage_relations && datas2.damage_relations){
 
@@ -32,10 +30,12 @@ const PokeWeakness = (props) => {
         console.log(pokemonWeakness)
         
         renderWeakness = teste.map((weak, index)=>{
-            return<Badge key={index} variant={weak}>{typesPt[weak]}</Badge>
+            return (
+                <Badge key={index} variant={weak}>
+                    { typesPt[weak] }
+                </Badge>
+            )
         })
-        
-     
     }
     return(
         <>
@@ -43,7 +43,6 @@ const PokeWeakness = (props) => {
             <legend>Fraquezas</legend>
                 {renderWeakness}
             </WeaknessCointer>
-            
         </>
     )
 }

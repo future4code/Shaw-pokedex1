@@ -3,7 +3,6 @@ import { extendTheme } from '@chakra-ui/react'
 const theme = extendTheme({
     components: {
         Progress: {
-
             variants: {
                 normal: {
                     filledTrack: {
@@ -113,11 +112,9 @@ const theme = extendTheme({
                         borderRadius: '10px'
                     }
                 }
-
             },
         },
         Badge: {
-
             variants: {
                 moves: {
                     bg: '#DFDFDF',
@@ -132,7 +129,6 @@ const theme = extendTheme({
                     maxHeight: '20px'
                 },
                 normal: {
-
                     bg: '#9099a0',
                     borderRadius: '10px',
                     padding: '0px 10px',
@@ -144,7 +140,6 @@ const theme = extendTheme({
                     justifyContent:'center'
                 },
                 bug: {
-
                     bg: '#8FC12C',
                     borderRadius: '10px',
                     padding: '0px 10px',
@@ -157,7 +152,6 @@ const theme = extendTheme({
                     justifyContent:'center'
                 },
                 electric: {
-
                     bg: '#F3D13B',
                     borderRadius: '10px',
                     padding: '0px 10px',
@@ -169,7 +163,6 @@ const theme = extendTheme({
                     justifyContent:'center'
                 },
                 fighting: {
-
                     bg: '#CD4069',
                     borderRadius: '10px',
                     padding: '0px 10px',
@@ -182,7 +175,6 @@ const theme = extendTheme({
                     justifyContent:'center'
                 },
                 ghost: {
-
                     bg: '#5268AB',
                     borderRadius: '10px',
                     padding: '0px 10px',
@@ -195,7 +187,6 @@ const theme = extendTheme({
                     justifyContent:'center'
                 },
                 psychic: {
-
                     bg: '#F87176',
                     borderRadius: '10px',
                     padding: '0px 10px',
@@ -208,7 +199,6 @@ const theme = extendTheme({
                     justifyContent:'center'
                 },
                 flying: {
-
                     bg: '#92A9DE',
                     borderRadius: '10px',
                     padding: '0px 10px',
@@ -220,7 +210,6 @@ const theme = extendTheme({
                     justifyContent:'center'
                 },
                 steel: {
-
                     bg: '#5A8EA1',
                     borderRadius: '10px',
                     padding: '0px 10px',
@@ -233,7 +222,6 @@ const theme = extendTheme({
                     justifyContent:'center'
                 },
                 ice: {
-
                     bg: '#74CEBF',
                     borderRadius: '10px',
                     padding: '0px 10px',
@@ -245,7 +233,6 @@ const theme = extendTheme({
                     justifyContent:'center'
                 },
                 poison: {
-
                     bg: '#AB6AC8',
                     borderRadius: '10px',
                     padding: '0px 10px',
@@ -258,7 +245,6 @@ const theme = extendTheme({
                     justifyContent:'center'
                 },
                 fire: {
-
                     bg: '#FE9C54',
                     borderRadius: '10px',
                     padding: '0px 10px',
@@ -270,7 +256,6 @@ const theme = extendTheme({
                     justifyContent:'center'
                 },
                 dragon: {
-
                     bg: '#0A6CC4',
                     borderRadius: '10px',
                     padding: '0px 10px',
@@ -283,7 +268,6 @@ const theme = extendTheme({
                     justifyContent:'center'
                 },
                 ground: {
-
                     bg: '#D97745',
                     borderRadius: '10px',
                     padding: '0px 10px',
@@ -296,7 +280,6 @@ const theme = extendTheme({
                     justifyContent:'center'
                 },
                 water: {
-
                     bg: '#4C8FD5',
                     borderRadius: '10px',
                     padding: '0px 10px',
@@ -310,7 +293,6 @@ const theme = extendTheme({
                     
                 },
                 dark: {
-
                     bg: '#5A5266',
                     borderRadius: '10px',
                     padding: '0px 10px',
@@ -323,7 +305,6 @@ const theme = extendTheme({
                     justifyContent:'center'
                 },
                 rock: {
-
                     bg: '#C6B78A',
                     borderRadius: '10px',
                     padding: '0px 10px',
@@ -335,7 +316,6 @@ const theme = extendTheme({
                     justifyContent:'center'
                 },
                 grass: {
-
                     bg: '#63BB5A',
                     borderRadius: '10px',
                     padding: '0px 10px',
@@ -348,7 +328,6 @@ const theme = extendTheme({
                     justifyContent:'center'
                 },
                 fairy: {
-
                     bg: '#EB8EE5',
                     borderRadius: '10px',
                     padding: '0px 10px',
@@ -359,8 +338,6 @@ const theme = extendTheme({
                     alignItems:'center',
                     justifyContent:'center'
                 }
-
-
             },
         },
     },

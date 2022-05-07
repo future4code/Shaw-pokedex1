@@ -32,8 +32,8 @@ export const CardContainer = styled.div`
 `
 
 export const PokeImg = styled.img`
-         width: 65%;
-        cursor: pointer;
+    width: 65%;
+    cursor: pointer;
 `
 
 export const PokeBallContainer = styled.span`
