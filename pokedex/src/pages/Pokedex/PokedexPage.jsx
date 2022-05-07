@@ -12,6 +12,7 @@ const PokedexPage = () => {
     const pokedex = states.pokedex
     const setPokedex = setters.pokedex
     console.log(pokedex)
+
     return (
         <PokedexContainer>
             <Header />
@@ -26,7 +27,7 @@ const PokedexPage = () => {
                 {pokedex
                 .sort((a, b) => a.id - b.id)
                 .map((poke) => {
-                    return <Card pokeName={poke.name} />
+                    return <Card pokeName={poke.name} page={'pokedex'} />
                 })}
             </Grid>
             </PokedexMain>
