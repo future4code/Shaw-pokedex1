@@ -1,30 +1,29 @@
 import styled from 'styled-components'
 
 export const SpritesContainer = styled.div`
-    color:#423D3D;
+    color: #423D3D;
     min-width: 30%;
-    height: 100%;
-
+    height: 100%; // ?
 `
 export const Fieldset = styled.fieldset`
     border: 2px solid #423D3D;
-    padding: 5px 5%;
+    padding: 0% 5%; // 5px pra 0%, dessa forma parece que tirou padding da parte de baixo apenas.
     border-radius: 10px;
-    display:flex;
-    align-items:center ;
+    display: flex;
+    align-items: center ;
     justify-content: center;
-    gap:20px;
+    gap: 1.25rem;
     min-width: 100%;
     height: 100%;
-    legend{
+
+    legend {
         font-size: 1.5rem;
-        padding: 5px;
+        padding: 0.313rem; // Eliminando o padding vertical.
         text-transform: capitalize;
     }
-    
 `
 
 export const Img = styled.img`
     height: 90%;
-    padding-bottom: 5px;
+    padding-bottom: 0.313rem;
 `

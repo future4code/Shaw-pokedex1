@@ -1,7 +1,7 @@
 import PokemonType from '../../components/PokemonTypes/PokemonType'
 import PokemonStats from '../../components/PokemonStats/PokemonStats'
 import useRequestData from '../../hook/useRequestData'
-import { InfoContainer, PageContainer, Img, InfoCenterDiv, ButtonContainer, TesteBox } from './style'
+import { InfoContainer, PageContainer, Img, InfoCenterDiv, ButtonContainer} from './style'
 import { Box } from "@chakra-ui/react"
 import { colors } from '../../theme/pokemonTypeColors'
 import PokeWeakness from '../../components/PokeWeakness/PokeWeakness'
@@ -35,11 +35,12 @@ const PokemonDetailsPage = () => {
                 boxShadow='md' style={{ display: 'flex', flexDirection: 'column', justifyContent: 'space-between', alignItems: 'center', height: '35vh', borderRadius: '10px', paddingBottom:'10px' }}>
                     <ButtonContainer>
                         <button onClick={onClickPrevious}><IoIosArrowDropleftCircle /></button>
+                        
                         <p>#{('00'+pokemonData.id).slice(-3)} <span>{pokemonData.name}</span></p>
+                        
                         <button onClick={onClickNext}><IoIosArrowDroprightCircle /></button>
                     </ButtonContainer>
                     <Img src={pokemonData.sprites.other['official-artwork'].front_default} alt={pokemonData.name} />
-
                 </Box>}
 
                 {

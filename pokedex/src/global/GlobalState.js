@@ -9,12 +9,12 @@ export default function GlobalState(props) {
 
     const getRequest = (url, setData) => {
         axios.get(base_url + url)
-            .then((res) => {
-                setData(res.data)
-            })
-            .catch((err) => {
-                console.log(err)
-            })
+        .then((res) => {
+            setData(res.data)
+        })
+        .catch((err) => {
+            console.log(err)
+        })
     }
     
     const states = { pokedex }

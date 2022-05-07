@@ -1,12 +1,13 @@
 import styled from 'styled-components'
 
-export const StatsContainer = styled.div`
-    color:#423D3D;
-    width: 30%;
-    height: 100%;
-`
 export const StatName = styled.span`
     font-weight: bold;
+`
+
+export const StatsContainer = styled.div`
+    color: #423D3D;
+    width: 30%;
+    height: 100%;
 `
 
 export const FieldsetForm = styled.fieldset`
@@ -14,16 +15,18 @@ export const FieldsetForm = styled.fieldset`
     font-size: 1.1rem;
     padding: 5%;
     border-radius: 10px;
-    display:flex;
+    display: flex;
     flex-direction: column;
-    gap:20px;
+    gap: 1.4rem; //tava 1.25
     height: 100%;
-    legend{
+
+    legend {
         font-size: 1.5rem;
-        padding:5px ;
+        padding: 0.313rem;
     }
-    div{
-        p{
+
+    div {
+        p {
             font-size: 0.8rem;
         }
     }
