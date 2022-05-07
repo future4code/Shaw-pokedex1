@@ -1,4 +1,4 @@
-import React, {useEffect, useState } from 'react'
+import React, { useEffect, useState, useContext } from 'react'
 import axios from 'axios'
 import { base_url } from '../../constants/constants'
 import { HomeContainer, HomeMain } from './style'
@@ -6,6 +6,7 @@ import Card from '../../components/Card/Card'
 import Header from '../../components/Header/Header'
 import Footer from "../../components/Footer/Footer"
 import { Grid, Stack } from "@chakra-ui/react";
+import { GlobalContext } from '../../global/GlobalContext'
 import {
     Pagination,
     usePagination,
@@ -48,7 +49,10 @@ const HomePage = () => {
         },
     });
 
-    const getAllPokemon = (pageSize,offset) => {
+    const { states} = useContext(GlobalContext)
+    const pokedex = states.pokedex
+
+    const getAllPokemon = (pageSize, offset) => {
         const url = `${base_url}pokemon/?limit=${pageSize}&offset=${offset}`
         axios.get(url)
             .then((res) => {
@@ -58,12 +62,16 @@ const HomePage = () => {
     }
 
     useEffect(() => {
-        if(currentPage===43){
+        if (currentPage === 43) {
             getAllPokemon(16, offset)
-        }else{
+        } else {
             getAllPokemon(21, offset)
         }
     }, [currentPage, offset]);
+
+    const renderCards = () => {
+
+    }
 
     // handlers
     const handlePageChange = (nextPage) => {
@@ -75,10 +83,10 @@ const HomePage = () => {
         <HomeContainer>
             <Header page={"home"} />
             <HomeMain>
-                <Stack 
-                display={'flex'}
-                flexDirection={'column'}
-                gap={'20px'}
+                <Stack
+                    display={'flex'}
+                    flexDirection={'column'}
+                    gap={'20px'}
                 >
                     <Pagination
                         pagesCount={pagesCount}
@@ -170,8 +178,8 @@ const HomePage = () => {
                         })}
                     </Grid>
                 </Stack>
-             </HomeMain>
-             <Footer />
+            </HomeMain>
+            <Footer />
         </HomeContainer>
     )
 }
