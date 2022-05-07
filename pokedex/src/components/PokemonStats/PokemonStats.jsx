@@ -1,17 +1,25 @@
 import { Progress } from '@chakra-ui/react'
-import {FieldsetForm, StatsContainer, StatName} from './style'
+import { StatName, StatsContainer, FieldsetForm } from './style'
 
 const statsPt = [
-    'HP', 'Ataque', 'Defesa', 'Sp. Atk.', 'Sp. Def.', 'Velocidade'
+    'HP', 
+    'Ataque', 
+    'Defesa', 
+    'Sp. Atk.', 
+    'Sp. Def.', 
+    'Velocidade'
 ]
 
 const PokemonStats = (props) => {
+    
     const stats = props.stats.map((stat, index) => {
         return (
             <div key={index}>
-                <p><StatName>{statsPt[index]}: </StatName>{stat.base_stat} </p>
+                <p>
+                    <StatName> {statsPt[index]} : </StatName>
+                    {stat.base_stat} 
+                </p>
                 <Progress variant={props.type} size='sm' value={stat.base_stat} max='260' />
-
             </div>
         )
     })
@@ -19,8 +27,8 @@ const PokemonStats = (props) => {
     return (
         <StatsContainer>
             <FieldsetForm>
-                <legend>Estatísticas</legend>
-                {stats}
+                <legend> Estatísticas </legend>
+                { stats }
             </FieldsetForm>
         </StatsContainer>
     )

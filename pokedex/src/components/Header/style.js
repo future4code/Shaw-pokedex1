@@ -32,8 +32,8 @@ export const DivDex = styled.div`
     display: flex;
     justify-content: end;
     align-items: center;
-    padding-right: 15px;
-    gap: 20px;
+    padding-right: 1em;
+    gap: 1.3em;
 `
 
 export const Button = styled.button`

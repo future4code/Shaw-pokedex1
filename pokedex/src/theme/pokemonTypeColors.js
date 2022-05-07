@@ -17,9 +17,6 @@ import rock from '../assets/Images/types/rock.png'
 import steel from '../assets/Images/types/steel.png'
 import water from '../assets/Images/types/water.png'
 
-
-
-
 export const colors = {
     normal: '#9099a0',
     bug: '#8FC12C',
@@ -40,6 +37,7 @@ export const colors = {
     grass: '#63BB5A',
     fairy: '#EB8EE5',
 }
+
 export const typesPt = {
     normal: 'normal',
     bug: 'inseto',

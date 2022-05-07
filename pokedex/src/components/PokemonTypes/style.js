@@ -1,11 +1,9 @@
 import styled from 'styled-components'
 
 export const StatsContainer = styled.div`
-    color:#423D3D;
+    color: #423D3D;
     min-width: 30%;
-
 `
-
 
 export const FieldsetForm = styled.fieldset`
     border: 2px solid #423D3D;
@@ -13,9 +11,10 @@ export const FieldsetForm = styled.fieldset`
     padding: 5%;
     border-radius: 10px;
     display: flex;
-    gap:10px;
-    legend{
+    gap: 0.625rem;
+
+    legend {
         font-size: 1.5rem;
-        padding: 5px ;
+        padding: 0.313rem;
     }
 `

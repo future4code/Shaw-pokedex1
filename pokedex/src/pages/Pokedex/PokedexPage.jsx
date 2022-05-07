@@ -8,11 +8,9 @@ import { PokedexContainer, PokedexMain, DivDexEmpty } from './style'
 import Gengar from '../../assets/Images/Gengar.png'
 
 const PokedexPage = () => {
-    const { states, setters } = useContext(GlobalContext)
+    const { states } = useContext(GlobalContext)
 
     const pokedex = states.pokedex
-    const setPokedex = setters.pokedex
-    console.log(pokedex)
     return (
         <PokedexContainer>
             <Header />
@@ -37,6 +35,7 @@ const PokedexPage = () => {
                         <img src={Gengar} alt="Imagem do Gengar triste por não ter Pokemon na Pokedex" />
                     </DivDexEmpty>
                 }
+
             </PokedexMain>
             <Footer />
         </PokedexContainer>

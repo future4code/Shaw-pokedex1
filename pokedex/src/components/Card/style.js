@@ -18,7 +18,7 @@ export const CardContainer = styled.div`
     font-size: 1.2rem;
     text-transform: capitalize;
     min-width: 100%;
-    gap: 2.5%;
+    gap: 2%;
     box-shadow: 0px 0px 6px;
     span{
         width: 100%;
@@ -32,8 +32,8 @@ export const CardContainer = styled.div`
 `
 
 export const PokeImg = styled.img`
-         width: 65%;
-        cursor: pointer;
+    width: 65%;
+    cursor: pointer;
 `
 
 export const PokeBallContainer = styled.span`
