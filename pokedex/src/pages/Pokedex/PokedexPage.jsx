@@ -11,10 +11,24 @@ const PokedexPage = () => {
     const { states } = useContext(GlobalContext)
 
     const pokedex = states.pokedex
+
     return (
         <PokedexContainer>
             <Header />
             <PokedexMain>
+            <Grid
+                gap={10}
+                mt={20}
+                px={20}
+                templateColumns="repeat(3, 18rem)"
+                templateRows="auto"
+            >
+                {pokedex
+                .sort((a, b) => a.id - b.id)
+                .map((poke) => {
+                    return <Card pokeName={poke.name} page={'pokedex'} />
+                })}
+            </Grid>
                 {pokedex.length !== 0 ?
                     <Grid
                         gap={10}
@@ -35,7 +49,6 @@ const PokedexPage = () => {
                         <img src={Gengar} alt="Imagem do Gengar triste por não ter Pokemon na Pokedex" />
                     </DivDexEmpty>
                 }
-
             </PokedexMain>
             <Footer />
         </PokedexContainer>
