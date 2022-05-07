@@ -13,3 +13,13 @@ export const HomeContainer = styled.div`
     gap:40px;
     max-width: 100vw; 
 `
+
+export const LoaderContainer = styled.div`
+    height: 60vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    img{
+        height: 20%;
+    }
+`

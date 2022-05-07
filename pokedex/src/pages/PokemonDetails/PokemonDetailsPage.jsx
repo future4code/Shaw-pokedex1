@@ -23,7 +23,6 @@ const PokemonDetailsPage = () => {
         params.id !== '898' && goToPokemonDetailsPage(navigate, Number(params.id) + 1)
     }
     const onClickPrevious = () => {
-        console.log()
         params.id !== '1' && goToPokemonDetailsPage(navigate, Number(params.id) - 1)
     }
 

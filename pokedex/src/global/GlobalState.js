@@ -1,24 +1,14 @@
 import React, { useState, useEffect } from 'react'
 import { GlobalContext } from './GlobalContext'
-import { base_url } from '../constants/constants'
-import axios from 'axios'
 
 export default function GlobalState(props) {
 
     const [pokedex, setPokedex] = useState([])
+    const [pageBefore, setPageBefore] = useState([])
 
-    const getRequest = (url, setData) => {
-        axios.get(base_url + url)
-        .then((res) => {
-            setData(res.data)
-        })
-        .catch((err) => {
-            console.log(err)
-        })
-    }
     
-    const states = { pokedex }
-    const setters = { setPokedex }
+    const states = { pokedex, pageBefore }
+    const setters = { setPokedex, setPageBefore }
 
     useEffect(() => {
         const pokedexList = JSON.parse(window.localStorage.getItem("pokedex"))
