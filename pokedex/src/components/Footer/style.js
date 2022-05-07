@@ -43,7 +43,7 @@ export const LinksDiv = styled.div`
         margin-bottom: 5px;
         font-weight: bold;
         font-size: 20px;
-        -webkit-text-stroke: 1.2px #000;
+        -webkit-text-stroke: 1px #000;
         color: white;
     }
     
