@@ -7,18 +7,13 @@ export const MovesContainer = styled.div`
   height: 100%;
 `
 
-// export const StatName = styled.span`
-//     font-weight: bold;
-//  ????`
-
 export const FieldsetForm = styled.fieldset`
   border: 2px solid #423D3D;
   font-size: 1.1rem;
-  padding: 0 0.3rem 0.625rem 5%; // tentando ajeitar bugs de badge colados e dando padding no bottom pra n ficar colado
+  padding: 0 0.3rem 0.625rem 5%;
   border-radius: 10px;
   display: flex;
   flex-direction: column;
-  /* gap: 20px;  ????? */
   height: 100%;
   
   legend{
@@ -35,7 +30,6 @@ export const ScrollContainer = styled.div`
   flex-wrap: wrap;
   overflow-y: scroll;
   overflow-x: hidden;
-  /* gap: 10px; ????? */
   height: 100%;
   justify-content: center;
   align-items: center;

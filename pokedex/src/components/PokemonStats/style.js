@@ -13,11 +13,11 @@ export const StatsContainer = styled.div`
 export const FieldsetForm = styled.fieldset`
     border: 2px solid #423D3D;
     font-size: 1.1rem;
-    padding: 5%;
+    padding: 3% 5% 5% 5%;
     border-radius: 10px;
     display: flex;
     flex-direction: column;
-    gap: 1.4rem; //tava 1.25
+    justify-content: space-around;
     height: 100%;
 
     legend {
