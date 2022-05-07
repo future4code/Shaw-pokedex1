@@ -17,6 +17,7 @@ function Card(props) {
     const { states, setters } = useContext(GlobalContext)
     const pokedex = states.pokedex
     const setPokedex = setters.setPokedex
+    const setPageBefore = setters.setPageBefore
 
     const getPokemon = (pokeName) => {
         const url = `${base_url}pokemon/${pokeName}`
@@ -68,20 +69,25 @@ function Card(props) {
 
     const types = pokemon.types?.map((type, index) => {
         return (
-            <Tooltip label={typesPt[type.type.name]} textTransform={'capitalize'}>
-                <IconeImg key={index} src={typesIcons[type.type.name]} />
+            <Tooltip key={index} label={typesPt[type.type.name]} textTransform={'capitalize'}>
+                <IconeImg src={typesIcons[type.type.name]} />
             </Tooltip>
         )
     })
 
+    const goToDetaisl = (id) =>{
+        goToPokemonDetailsPage(navigate, id)
+        setPageBefore(props.page)
+    }
+
     return (
         <div>
-            {pokemon.name ?
+            {pokemon.name &&
                 <CardContainer type={pokemon.types[0].type.name}>
 
                     <span> #{('00' + pokemon.id).slice(-3)} </span>
 
-                    <PokeImg onClick={() => goToPokemonDetailsPage(navigate, pokemon.id)}
+                    <PokeImg onClick={() => goToDetaisl(pokemon.id)}
                         src={pokemon.sprites.other['official-artwork'].front_default}
                         alt={pokemon.name}
                     />
@@ -96,10 +102,6 @@ function Card(props) {
                         }
                     </PokeBallContainer>
                 </CardContainer>
-                :
-                <div>
-                    Carregando...
-                </div>
             }
         </div>
     )

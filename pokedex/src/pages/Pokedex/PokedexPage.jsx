@@ -7,11 +7,9 @@ import { Grid } from "@chakra-ui/layout"
 import {PokedexContainer, PokedexMain} from './style'
 
 const PokedexPage = () => {
-    const { states, setters } = useContext(GlobalContext)
+    const { states } = useContext(GlobalContext)
 
     const pokedex = states.pokedex
-    const setPokedex = setters.pokedex
-    console.log(pokedex)
     return (
         <PokedexContainer>
             <Header />
@@ -26,7 +24,7 @@ const PokedexPage = () => {
                 {pokedex
                 .sort((a, b) => a.id - b.id)
                 .map((poke) => {
-                    return <Card pokeName={poke.name} />
+                    return <Card pokeName={poke.name} page={'pokedex'}/>
                 })}
             </Grid>
             </PokedexMain>

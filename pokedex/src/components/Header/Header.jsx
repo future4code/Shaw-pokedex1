@@ -3,11 +3,15 @@ import LogoDex from "../../assets/Images/LogoDex.png"
 import Battle from "../../assets/Images/Battle.png"
 import Pokedex from "../../assets/Images/Pokedex.png"
 import { useNavigate } from "react-router-dom"
-import { goToHomePage, goToBattlePage, goToPokedexPage, goBack } from "../../routes/coordinator"
+import { goToHomePage, goToBattlePage, goToPokedexPage } from "../../routes/coordinator"
 import { TiArrowBack } from "react-icons/ti"
 import { Tooltip } from '@chakra-ui/react'
+import { useContext } from "react"
+import { GlobalContext } from "../../global/GlobalContext"
 
 const Header = (props) => {
+    const { states } = useContext(GlobalContext)
+    const pageBefore = states.pageBefore
 
     const navigate = useNavigate()
 
@@ -39,15 +43,29 @@ const Header = (props) => {
                 </HeaderDiv>
                 : 
                 <HeaderDiv>
-                    <Tooltip hasArrow bg='gray.400' color={'black'} label='Voltar' placement='top-end'>
-                        <Button onClick={() => goBack(navigate)}>
-                            <TiArrowBack 
-                                size={50} 
-                                color={'#E41C24'} 
-                                style={{position: "absolute", top: "14px"}} 
-                            />
-                        </Button>
-                    </Tooltip>
+                    {
+                        pageBefore === 'pokedex' ?
+
+                        <Tooltip hasArrow bg='gray.400' color={'black'} label='Voltar' placement='top-end'>
+                            <Button onClick={() => goToPokedexPage(navigate)}>
+                                <TiArrowBack 
+                                    size={50} 
+                                    color={'#E41C24'} 
+                                    style={{position: "absolute", top: "14px"}} 
+                                />
+                            </Button>
+                        </Tooltip>
+                        :
+                        <Tooltip hasArrow bg='gray.400' color={'black'} label='Voltar' placement='top-end'>
+                            <Button onClick={() => goToHomePage(navigate)}>
+                                <TiArrowBack 
+                                    size={50} 
+                                    color={'#E41C24'} 
+                                    style={{position: "absolute", top: "14px"}} 
+                                />
+                            </Button>
+                        </Tooltip>
+                    }
 
                     <DivLogoOthers>
                         <Tooltip hasArrow bg='gray.400' color={'black'} label='Início'>
