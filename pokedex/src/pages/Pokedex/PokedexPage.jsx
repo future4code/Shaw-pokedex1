@@ -16,19 +16,6 @@ const PokedexPage = () => {
         <PokedexContainer>
             <Header />
             <PokedexMain>
-            <Grid
-                gap={10}
-                mt={20}
-                px={20}
-                templateColumns="repeat(3, 18rem)"
-                templateRows="auto"
-            >
-                {pokedex
-                .sort((a, b) => a.id - b.id)
-                .map((poke) => {
-                    return <Card pokeName={poke.name} page={'pokedex'} />
-                })}
-            </Grid>
                 {pokedex.length !== 0 ?
                     <Grid
                         gap={10}
@@ -40,7 +27,7 @@ const PokedexPage = () => {
                         {pokedex
                             .sort((a, b) => a.id - b.id)
                             .map((poke) => {
-                                return <Card pokeName={poke.name} />
+                                return <Card pokeName={poke.name} page={'pokedex'} />
                             })}
                     </Grid>
                     :
