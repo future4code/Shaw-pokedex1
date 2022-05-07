@@ -1,12 +1,11 @@
-import React, { useEffect, useState, useContext } from 'react'
+import React, { useEffect, useState} from 'react'
 import axios from 'axios'
 import { base_url } from '../../constants/constants'
-import { HomeContainer, HomeMain } from './style'
+import { HomeContainer, HomeMain, LoaderContainer } from './style'
 import Card from '../../components/Card/Card'
 import Header from '../../components/Header/Header'
 import Footer from "../../components/Footer/Footer"
-import { Grid, Stack } from "@chakra-ui/react";
-import { GlobalContext } from '../../global/GlobalContext'
+import { Grid, Spinner, Stack } from "@chakra-ui/react";
 import {
     Pagination,
     usePagination,
@@ -22,6 +21,8 @@ import { MdOutlineArrowForwardIos, MdOutlineArrowBackIosNew } from 'react-icons/
 const HomePage = () => {
 
     const [pokemonList, setPokemonList] = useState([])
+    const [loading, setLoading] = useState(true)
+
 
     // constants
     const outerLimit = 2;
@@ -49,14 +50,14 @@ const HomePage = () => {
         },
     });
 
-    const { states} = useContext(GlobalContext)
-    const pokedex = states.pokedex
 
     const getAllPokemon = (pageSize, offset) => {
+        setLoading(true)
         const url = `${base_url}pokemon/?limit=${pageSize}&offset=${offset}`
         axios.get(url)
             .then((res) => {
                 setPokemonList(res.data.results)
+                setLoading(false)
             })
             .catch((error) => console.error("App =>", error));
     }
@@ -69,15 +70,19 @@ const HomePage = () => {
         }
     }, [currentPage, offset]);
 
-    const renderCards = () => {
-
-    }
-
     // handlers
     const handlePageChange = (nextPage) => {
         setCurrentPage(nextPage);
-        console.log("request new data with ->", nextPage);
     };
+
+    const renderPokemon = () => {
+        let render =[]
+        render = pokemonList.map((poke) => {
+            return <Card pokeName={poke.name} page={"home"} id={poke.id}/>
+        })
+
+        return render
+    }
 
     return (
         <HomeContainer>
@@ -108,7 +113,7 @@ const HomePage = () => {
                                 borderRadius='50%'
                                 w={7}
                                 h={9}
-                                onClick={() => console.warn("I'm clicking the previous")}
+                                
                             >
                                 <MdOutlineArrowBackIosNew />
                             </PaginationPrevious>
@@ -118,7 +123,6 @@ const HomePage = () => {
                                 separator={
                                     <PaginationSeparator
                                         isDisabled
-                                        onClick={() => console.warn("I'm clicking the separator")}
                                         bg="gray.200"
                                         fontSize="sm"
                                         w={7}
@@ -136,7 +140,6 @@ const HomePage = () => {
                                         bg="gray.300"
                                         key={`pagination_page_${page}`}
                                         page={page}
-                                        onClick={() => console.warn("Im clicking the page")}
                                         fontSize="sm"
                                         _hover={{
                                             bg: "gray.500",
@@ -160,23 +163,33 @@ const HomePage = () => {
                                 bg="gray.300"
                                 w={7}
                                 h={9}
-                                onClick={() => console.warn("I'm clicking the next")}
                             >
                                 <MdOutlineArrowForwardIos />
                             </PaginationNext>
                         </PaginationContainer>
                     </Pagination>
-                    <Grid
-                        gap={10}
-                        mt={20}
-                        px={20}
-                        templateColumns="repeat(3, 18rem)"
-                        templateRows="auto"
-                    >
-                        {pokemonList?.map((poke) => {
-                            return <Card pokeName={poke.name} />
-                        })}
-                    </Grid>
+                    {!loading ?
+
+                        <Grid
+                            gap={10}
+                            mt={20}
+                            px={20}
+                            templateColumns="repeat(3, 18rem)"
+                            templateRows="auto"
+                        >
+                            {renderPokemon()}
+                        </Grid>
+                    :
+                    <LoaderContainer>
+                        <Spinner
+                            thickness='4px'
+                            speed='0.65s'
+                            emptyColor='gray.200'
+                            color='red.500'
+                            size='xl'
+                        />
+                    </LoaderContainer>
+                    }
                 </Stack>
             </HomeMain>
             <Footer />

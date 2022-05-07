@@ -14,20 +14,18 @@ const PokeWeakness = (props) => {
 
     if(datas1.damage_relations && datas2.damage_relations){
 
-        console.log(datas1.damage_relations.double_damage_from)
         let pokemonWeakness = [] 
-        const weaknessType1 = datas1.damage_relations.double_damage_from.map((item)=>{
+        datas1.damage_relations.double_damage_from.forEach((item)=>{
             pokemonWeakness = [...pokemonWeakness, item.name]
         })
-        const weaknessType2 = props.types[1] && datas2.damage_relations.double_damage_from.map((item)=>{
+         props.types[1] && datas2.damage_relations.double_damage_from.forEach((item)=>{
             pokemonWeakness = [...pokemonWeakness, item.name]
         })
         
         const teste = pokemonWeakness.reduce((unico, item) => {
             return unico.includes(item) ? unico : [...unico, item]
         }, []);
-       
-        console.log(pokemonWeakness)
+ 
         
         renderWeakness = teste.map((weak, index)=>{
             return (
