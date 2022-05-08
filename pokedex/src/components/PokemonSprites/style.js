@@ -3,11 +3,11 @@ import styled from 'styled-components'
 export const SpritesContainer = styled.div`
     color: #423D3D;
     min-width: 30%;
-    height: 100%; // ?
+    height: 100%; 
 `
 export const Fieldset = styled.fieldset`
     border: 2px solid #423D3D;
-    padding: 0% 5%; // 5px pra 0%, dessa forma parece que tirou padding da parte de baixo apenas.
+    padding: 0% 5%; 
     border-radius: 10px;
     display: flex;
     align-items: center ;
@@ -18,7 +18,7 @@ export const Fieldset = styled.fieldset`
 
     legend {
         font-size: 1.5rem;
-        padding: 0.313rem; // Eliminando o padding vertical.
+        padding: 0.313rem;
         text-transform: capitalize;
     }
 `

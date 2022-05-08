@@ -28,7 +28,7 @@ const PokemonDetailsPage = () => {
 
     return (
         <>
-            <Header />
+            <Header page="details" />
             <PageContainer>
                 {pokemonData.types && <Box bgGradient ={`linear(to top, #f8f6f45a 0.05%, ${colors[pokemonData.types[0].type.name]} 80%, ${colors[pokemonData.types[0].type.name]} 50%)`} 
                 boxShadow='md' style={{ display: 'flex', flexDirection: 'column', justifyContent: 'space-between', alignItems: 'center', height: '35vh', borderRadius: '10px', paddingBottom:'10px' }}>
