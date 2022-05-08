@@ -43,6 +43,7 @@ function Card(props) {
         })
         currentPokedex.splice(index, 1)
         setPokedex(currentPokedex)
+        currentPokedex.length===0 && window.localStorage.clear("pokedex")
         setInPokedex(false)
     }
 
@@ -65,7 +66,7 @@ function Card(props) {
 
     useEffect(() => {
         addLocalStorage()
-    }, [inPokedex])
+    }, [pokedex])
 
     const types = pokemon.types?.map((type, index) => {
         return (
