@@ -92,6 +92,7 @@ const HomePage = () => {
                     display={'flex'}
                     flexDirection={'column'}
                     gap={'20px'}
+                    align='center'
                 >
                     <Pagination
                         pagesCount={pagesCount}
@@ -103,7 +104,7 @@ const HomePage = () => {
                             align="center"
                             justify="space-between"
                             p={4}
-                            w="full"
+                            w="60vw"
                         >
                             <PaginationPrevious
                                 _hover={{
