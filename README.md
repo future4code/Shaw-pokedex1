@@ -18,18 +18,12 @@ A ideia é usar a Poke Api como fonte de dados para o projeto. Ela é uma API p�
 ## :black_nib: Wireframe
 [wireframe](https://www.figma.com/file/YCEbRNrw59vTRT62cmfklN/Pok%C3%A9dex-team-library?node-id=416%3A50)
 
-## ✔️ O que funciona
+## ✔️ Funcionalidades
 - Header dinâmico: Botões para transitar entre as páginas de batalha, pokédex, home e um botão de voltar de acordo com a página na qual ele está sendo renderizado
 - Páginação: São renderizados ao todo 898 pokémon, sendo 21 por página
 - Cards: Ao clicar na imagem do pokémon o usuário é rediracionado para a tela de detalhes, além disso ele pode adicionar ou remover um pokémon da pokédex ao clicar na pokebola.
 - Pokédex: Renderiza todos os pokémon que foram capturados e permite que o usuário os remova da mesma
 - Página de Detalhes: Rederiza os detalhes do pokémon que o usuário clicou na home ou na pokédex, além disso ele consegue transitar entre os detalhes de todos os pokémon ao clicar nas setas de próximo e anterior. E por fim, o usuário consegue adicionar ou remover o pokémon da pokédex.
-
-## ❌ O que não funciona
-
-
-## :fire: Funcionalidade Extra
-
 
 ## :books: Bibliotecas utilizadas
 - [styled-components](https://styled-components.com/)
@@ -51,3 +45,16 @@ A ideia é usar a Poke Api como fonte de dados para o projeto. Ela é uma API p�
 ## 📷 Imagens
 
 #### DESKTOP
+
+![image](https://user-images.githubusercontent.com/50851374/167298952-4509cda7-dd6d-43d7-ae3e-ba9c56f3bb41.png)
+![image](https://user-images.githubusercontent.com/50851374/167299012-feed2804-f668-481b-99ee-361da2e2106b.png)
+![image](https://user-images.githubusercontent.com/50851374/167299195-21a2d44a-9c2c-47f7-bdfa-1d5dbdd53ec2.png)
+![image](https://user-images.githubusercontent.com/50851374/167299272-dcbe50ee-cbff-4387-8f7b-bfa877cfd268.png)
+![image](https://user-images.githubusercontent.com/50851374/167299308-126e8dbf-0fbe-4bce-8ac5-b995e73dac3e.png)
+![image](https://user-images.githubusercontent.com/50851374/167299327-b516171f-d9e4-4ae4-b8c6-7c4248ad3b5b.png)
+
+
+
+
+
+
