@@ -4,7 +4,7 @@ export const PokedexMain = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 100vw; 
+    max-width: 100vw; 
     min-height: 80vh;
 `
 
